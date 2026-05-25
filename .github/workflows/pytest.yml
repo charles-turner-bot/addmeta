@@ -5,6 +5,9 @@ on:
       - master
   pull_request:
   workflow_call:
+env:
+  PIP_UPLOADED_PRIOR_TO: P7D
+
 jobs:
   pytest:
     runs-on: ubuntu-latest
