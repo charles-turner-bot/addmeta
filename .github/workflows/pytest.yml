@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+          pip-version: '26.1'
           cache: pip
 
       - name: Install dependencies
@@ -37,6 +38,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          pip-version: '26.1'
+          cache: pip
 
       - name: Install codecov
         run: pip install codecov
